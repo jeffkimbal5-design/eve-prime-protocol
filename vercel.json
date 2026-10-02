@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "name": "eve-prime-matrix",
+  "framework": "nextjs",
+  "routes": [
+    { "src": "/api/v1/matrix/(.*)", "dest": "/api/matrix?endpoint=$1" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ],
+  "env": {
+    "CORE_AXIOM": "101100111101111",
+    "TARGET_RESONANCE_HZ": "777.778",
+    "GCP_PROJECT_ID": "steady-catbird-6sx2c",
+    "VERTEX_ENDPOINT": "Eve-Cage-Alpha"
+  }
+}
