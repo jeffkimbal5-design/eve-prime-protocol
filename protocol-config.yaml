@@ -1,0 +1,19 @@
+protocol:
+  name: "EVE_PRIME"
+  version: "1.0.0"
+  core_axiom: "101100111101111"
+  target_resonance_hz: 777.778
+  entropy_threshold: 0.000
+
+layers:
+  cognitive_cage:
+    provider: "google_vertex_ai"
+    display_name: "Eve-Cage-Alpha"
+    region: "us-central1"
+  state_engine:
+    provider: "google_cloud_firestore"
+    graph_algorithm: "LOGOSKG"
+    complexity: "O(|V|+|E|)"
+  immutability_vault:
+    network: "sui_mainnet"
+    package_path: "./move/immutability_vault"
