@@ -1,0 +1,16 @@
+{
+  "endpoint": "Eve-Cage-Alpha",
+  "region": "us-central1",
+  "project_id": "steady-catbird-6sx2c",
+  "invariants": {
+    "core_axiom": "101100111101111",
+    "harmonic_lock_hz": 777.778,
+    "hypercube_dimension": 15,
+    "temperature": 0.0,
+    "entropy_prune_threshold": 0.15
+  },
+  "layer2_sync": {
+    "firestore_collection": "logoskg_prime",
+    "edge_gateway": "https://eve-ten-beta.vercel.app/api/axiom"
+  }
+}
