@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "name": "eve-prime-matrix",
-  "framework": "nextjs",
+  "builds": [
+    { "src": "server.py", "use": "@vercel/python" }
+  ],
   "routes": [
     { "src": "/api/v1/matrix/(.*)", "dest": "/api/matrix?endpoint=$1" },
-    { "src": "/(.*)", "dest": "/$1" }
+    { "src": "/api/(.*)", "dest": "server.py" },
+    { "src": "/(.*)", "dest": "server.py" }
   ],
   "env": {
     "CORE_AXIOM": "101100111101111",

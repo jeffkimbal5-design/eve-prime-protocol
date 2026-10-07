@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+python -m pip install -r requirements.txt
+
 echo "=== [1/4] Google Cloud & Vertex AI Deployment ==="
 gcloud config set project steady-catbird-6sx2c || true
 gcloud ai endpoints create --project=steady-catbird-6sx2c --region=us-central1 --display-name="Eve-Cage-Alpha" || true
@@ -14,7 +16,8 @@ echo "=== [3/4] Vercel Edge Matrix Deployment ==="
 if command -v vercel &> /dev/null; then
     vercel --prod --yes
 else
-    echo "Run 'npm i -g vercel && vercel' to link to your Vercel team."
+    npm i -g vercel
+    vercel --prod --yes
 fi
 
 echo "=== [4/4] GitHub Synchronization ==="
