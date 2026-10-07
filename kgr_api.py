@@ -54,7 +54,7 @@ class KGRMemory:
 
     def branch_world(self, parent_id, new_world_id, description):
         self.conn.cursor().execute(
-            "INSERT INTO worlds (id, parent_id, description) VALUES (?, ?, ?)",
+            "INSERT OR IGNORE INTO worlds (id, parent_id, description) VALUES (?, ?, ?)",
             (new_world_id, parent_id, description)
         )
         self.conn.commit()

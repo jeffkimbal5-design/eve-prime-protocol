@@ -1,0 +1,7 @@
+EVE PRIME PROTOCOL - DEVELOPER LICENSE (TIER 1)
+Copyright (c) 2026 Jeffrey L. Kimbal. All rights reserved.
+
+Permission is hereby granted to the purchaser of this Tier 1 Developer SDK 
+to use, integrate, and execute the Eve Prime Protocol CLI and manifests 
+for personal, research, and internal commercial development. Redistribution 
+or resale of the underlying SDK source code is strictly prohibited.
