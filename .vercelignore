@@ -4,5 +4,8 @@
 node_modules
 __pycache__
 *.pyc
+move
+move/
+*.toml
 *.zip
 *.tar.gz

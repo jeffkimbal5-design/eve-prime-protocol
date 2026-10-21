@@ -1,16 +1,37 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
-  "name": "eve-prime-protocol",
   "framework": null,
-  "outputDirectory": "public",
-  "cleanUrls": true,
+  "builds": [
+    {
+      "src": "api/*.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
+    }
+  ],
   "routes": [
-    { "src": "/api/axiom", "dest": "/api/axiom.py" },
-    { "src": "/api/kgr", "dest": "/api/kgr.py" },
-    { "src": "/api/telemetry", "dest": "/api/telemetry.py" },
-    { "src": "/api/status", "dest": "/api/telemetry.py" },
-    { "src": "/(.*)", "dest": "/public/$1" }
+    {
+      "src": "/api/axiom",
+      "dest": "/api/axiom.py"
+    },
+    {
+      "src": "/api/kgr",
+      "dest": "/api/kgr.py"
+    },
+    {
+      "src": "/api/telemetry",
+      "dest": "/api/telemetry.py"
+    },
+    {
+      "src": "/api/status",
+      "dest": "/api/telemetry.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/"
+    }
   ],
   "headers": [
     {
