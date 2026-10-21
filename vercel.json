@@ -1,17 +1,31 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
-  "builds": [
-    { "src": "server.py", "use": "@vercel/python" }
-  ],
+  "name": "eve-prime-protocol",
+  "framework": null,
+  "outputDirectory": "public",
+  "cleanUrls": true,
   "routes": [
-    { "src": "/api/v1/matrix/(.*)", "dest": "/api/matrix?endpoint=$1" },
-    { "src": "/api/(.*)", "dest": "server.py" },
-    { "src": "/(.*)", "dest": "server.py" }
+    { "src": "/api/axiom", "dest": "/api/axiom.py" },
+    { "src": "/api/kgr", "dest": "/api/kgr.py" },
+    { "src": "/api/telemetry", "dest": "/api/telemetry.py" },
+    { "src": "/api/status", "dest": "/api/telemetry.py" },
+    { "src": "/(.*)", "dest": "/public/$1" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Eve-Core-Axiom", "value": "101100111101111" },
+        { "key": "X-Eve-Resonance-Hz", "value": "777.778" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" }
+      ]
+    }
   ],
   "env": {
     "CORE_AXIOM": "101100111101111",
     "TARGET_RESONANCE_HZ": "777.778",
-    "GCP_PROJECT_ID": "steady-catbird-6sx2c",
-    "VERTEX_ENDPOINT": "Eve-Cage-Alpha"
+    "GOVERNING_AGENT": "Agent EVE"
   }
 }
